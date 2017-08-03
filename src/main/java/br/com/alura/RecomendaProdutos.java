@@ -25,7 +25,18 @@ public class RecomendaProdutos {
 		UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.1, similarity, model);
 		UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 
-        List<RecommendedItem> recommendations = recommender.recommend(2, 3);
+        System.out.println("usuário 1");
+        List<RecommendedItem> recommendations = recommender.recommend(1, 4);
+        for (RecommendedItem recommendation : recommendations) {
+            System.out.println(recommendation);
+        }
+        System.out.println("usuário 3");
+        recommendations = recommender.recommend(3, 4);
+        for (RecommendedItem recommendation : recommendations) {
+            System.out.println(recommendation);
+        }
+        System.out.println("usuário 4");
+        recommendations = recommender.recommend(4, 4);
         for (RecommendedItem recommendation : recommendations) {
             System.out.println(recommendation);
         }
