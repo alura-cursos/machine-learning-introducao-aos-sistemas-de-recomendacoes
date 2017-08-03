@@ -11,7 +11,7 @@ import org.apache.mahout.cf.taste.recommender.Recommender;
 import org.apache.mahout.cf.taste.recommender.UserBasedRecommender;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
-public class RecomendadorDeProdutosBuilder implements RecommenderBuilder {
+public class RecomendadorBuilder implements RecommenderBuilder {
     public Recommender buildRecommender(DataModel model) throws TasteException {
         UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
         UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.1, similarity, model);
