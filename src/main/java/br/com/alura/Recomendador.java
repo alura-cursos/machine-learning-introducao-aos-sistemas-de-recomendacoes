@@ -13,12 +13,12 @@ public class Recomendador {
     }
 
     private DataModel getModelo(String path) throws IOException {
-        File file = new File(path);
+        File file = new File("src/main/resources/" + path);
         return new FileDataModel(file);
     }
 
     public DataModel getModeloDeCursos() throws IOException {
-       return getModelo("cursos.csv");
+       return getModelo("cursos2.csv");
     }
 
 }
